@@ -44,9 +44,12 @@ case "$1" in
         git merge docs-template/master
         ;;
     publish-package)
+        echo "Exporting static version of site"
         docker exec -d $PROJECT_NAME docpad generate --env static
         docker cp $PROJECT_NAME:/usr/src/app/out out
+        echo "Building container image as $EXPORT_IMAGE_PREFACE/$PROJECT_NAME"
         docker build -t $EXPORT_IMAGE_PREFACE/$PROJECT_NAME .
+        echo "Cleaning up"
         rm -r out
         ;;
     *)
