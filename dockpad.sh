@@ -50,6 +50,13 @@ case "$1" in
         rm -r out
         ;;
     *)
-        echo "Unrecognized option"
+        echo "Unrecognized option, available options are:"
+        echo "dev-start: start a dockpad development container"
+        echo "dev-restart: restart a dockpad development container (needed to rebuild site-structure)"
+        echo "dev-destroy: destroy the development container (does not affect local filesystem)"
+        echo "dev-log: follow development container logs"
+        echo "project-init: set up a new dockpad project based on docs-template"
+        echo "project-update: update the project based on any changes to the docs-template remote"
+        echo "publish-package: create/update an nginx container serving a static version of the site"
         ;;
 esac
