@@ -4,11 +4,12 @@
 
 PROJECT_NAME=dockpad-test
 DOCKER_HUB_NAME=aharnum
+DOCS_TEMPLATE_REPO=https://github.com/jhung/docs-template
 
 case "$1" in
     dev-start)
         echo "starting development container"
-        docker run --name $PROJECT_NAME -d -p 9778:9778 -v `pwd`/site-structure.json:/usr/src/app/site-structure.json -v `pwd`/src:/usr/src/app/src waharnum/docpad
+        docker run --name $PROJECT_NAME -d -p 9778:9778 -v `pwd`/site-structure.json:/usr/src/app/site-structure.json -v `pwd`/src:/usr/src/app/src aharnum/dockpad
         echo "Running at `docker-machine ip default`:9778"
         ;;
     dev-restart)
@@ -23,7 +24,7 @@ case "$1" in
         ;;
     project-init)
         echo "performing initial project setup"
-        git remote add docs-template https://github.com/jhung/docs-template
+        git remote add docs-template $DOCS_TEMPLATE_REPO
         git fetch docs-template
         git merge docs-template/master
         echo "setup complete"
