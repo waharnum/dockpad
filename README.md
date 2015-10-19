@@ -10,7 +10,7 @@ Not ready for prime time.
 - prereqs: running docker-machine on OSX/Windows (tested only on OSX so far)
 - `git init dockpad-project`
 - `cd dockpad-project`
-- `git remote add dockpad https://github.com/waharnum/idrc-dockpad.git`
+- `git remote add dockpad https://github.com/waharnum/dockpad.git`
 - `git fetch dockpad`
 - `git merge dockpad/master`
 - `./dockpadctl project-init`
