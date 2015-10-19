@@ -7,7 +7,7 @@ An experimental Docker wrapper around jhung's https://github.com/jhung/docs-temp
 Not ready for prime time.
 
 ## Usage
-
+- prereqs: running docker-machine on OSX/Windows (tested only on OSX so far)
 - `git init dockpad-project`
 - `cd dockpad-project`
 - `git remote add dockpad https://github.com/waharnum/idrc-dockpad.git`
@@ -17,7 +17,6 @@ Not ready for prime time.
 
 ## Local Development
 
-- prereqs: running docker-machine
 - start the development container: `./dockpadctl dev-start`
 - make changes to anything in the `/src` directory and site will rebuild while running
 - if you change `site-structure.json`, restart the container to pick up the changes: `./dockpadctl dev-restart`
